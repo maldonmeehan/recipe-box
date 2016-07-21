@@ -22,8 +22,5 @@ RSpec.configure do |config|
     Tag.all().each() do |tag|
       tag.destroy()
     end
-    Measurement.all().each() do |measurement|
-      measurement.destroy()
-    end
   end
 end
