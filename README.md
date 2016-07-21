@@ -1,14 +1,12 @@
 ## Ruby Database with Active Record - Many-to-Many - Recipe Box
 
-An app that lets people create a recipe, July 21, 2016
+An an app that allows users to keep track of recipes, July 21, 2016
 
 By Molly McGlone & Maldon Meehan
 
 ## Description
 
-An Epicodus student project to practice Ruby database with Active Record.
-
-Goal: Build an app that allows users to keep track of recipes.
+An Epicodus student project to practice a many-to-many Ruby database with Active Record.
 
 * As a user, I want to add a recipe with ingredients and instructions, so I remember how to prepare my favorite dishes.
 
@@ -28,7 +26,7 @@ Goal: Build an app that allows users to keep track of recipes.
 
 ## Setup/Installation Requirements
 
-Install *Employee Tracker* by cloning the repository.  
+Install *Recipe Box* by cloning the repository.  
 ```
 $ git clone https://github.com/maldonmeehan/recipe-box.git
 or https://github.com/mollykmcglone/Recipe_Box.git
