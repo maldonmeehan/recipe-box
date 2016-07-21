@@ -29,7 +29,8 @@ An Epicodus student project to practice a many-to-many Ruby database with Active
 Install *Recipe Box* by cloning the repository.  
 ```
 $ git clone https://github.com/maldonmeehan/recipe-box.git
-or https://github.com/mollykmcglone/Recipe_Box.git
+or
+$ git clone https://github.com/mollykmcglone/Recipe_Box.git
 ```
 
 Install required gems:
