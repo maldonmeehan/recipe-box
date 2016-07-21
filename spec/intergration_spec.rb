@@ -23,6 +23,15 @@ describe('the recipe route', :type => :feature) do
     click_button 'Add'
     expect(page).to have_content('Chicken')
   end
+
+  it('allows a user to enter instructions for their recipe') do
+    visit '/'
+    fill_in 'name', :with => 'Jerk Chicken'
+    click_button 'Go!'
+    fill_in 'instruction', :with => 'Wash the chicken, salt (pinch) and let sweat for 10 min. Add pepper and bake at 350 for 2 hours'
+    click_button 'Submit'
+    expect(page).to have_content('Wash the chicken')
+  end
 end
 
 

@@ -35,16 +35,9 @@ post('/recipes/:id/ingredients') do
   end
 end
 
-post('/recipes/:id/ingredients') do
+post('/recipes/:id/instructions') do
   @recipe = Recipe.find(params.fetch('id').to_i())
   instruction = params['instruction']
   @recipe.update({:instruction => instruction})
-  
-  @new_ingredient = Ingredient.create({:ingredient => ingredient})
-  @recipe.ingredients.push(@new_ingredient)
-  if @new_ingredient.save()
-    redirect('/recipes/'.concat(@recipe.id().to_s()))
-  else
-    erb(:errors)
-  end
+  redirect('/recipes/'.concat(@recipe.id().to_s()))
 end

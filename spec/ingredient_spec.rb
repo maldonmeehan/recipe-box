@@ -1,6 +1,11 @@
 require("spec_helper")
 
 describe(Ingredient) do
+  it("validates presence of ingredient") do
+    ingredient = Ingredient.new({:ingredient => ''})
+    expect(ingredient.save()).to(eq(false))
+  end
+
   describe("#recipes") do
     it('belongs to many recipes') do
       test_ingredient = Ingredient.create({:ingredient => 'Chicken'})

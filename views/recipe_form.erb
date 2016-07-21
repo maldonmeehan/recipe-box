@@ -20,7 +20,12 @@
 </form>
 
 <form action="/recipes/<%= @recipe.id %>/instructions" method="post">
+  <div>
   <h2>Instructions:</h2>
+  <% if @recipe.instruction() %>
+  <p><%= @recipe.instruction %></p>
+  <% end %>
+  </div>
   <div class="form-group">
     <textarea class="form-control" rows="10" name="instruction" placeholder="Please, write out step-by-step instructions here, including quantities and measurements."></textarea>
   </div>
