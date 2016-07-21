@@ -1,21 +1,21 @@
 <h2>Create your <%= @recipe.name %> recipe...</h2>
 
-<form action="/recipes/<%= @recipe.id %>/ingredients" method="post">
-  <div>
-    <h2>Step One: Add Ingredients:</h2>
-
-    <% if @recipe.ingredients.any?() %>
-    <table>
-      <% @recipe.ingredients.each do |ingredient| %>
-      <tr>
-        <td><%= ingredient.ingredient() %></td>
-        <td><form action="/recipes/<%= @recipe.id() %>/ingredients" method="post"><input name="_method" type="hidden" value="delete"><input name="ingredient_id" type="hidden" value="<%= ingredient.id %>"><button type="submit">Delete</button></form></td>
-      </tr>
-      <% end %>
-    </table>
+<div>
+<h2>Step One: Add Ingredients:</h2>
+<% if @recipe.ingredients.any?() %>
+  <table>
+  <% @recipe.ingredients.each do |ingredient| %>
+    <tr>
+      <td><%= ingredient.ingredient() %></td>
+      <td><form action="/recipes/<%= @recipe.id() %>/ingredients" method="post"><input name="_method" type="hidden" value="delete"><input name="ingredient_id" type="hidden" value="<%= ingredient.id %>"><button type="submit">Delete</button></form></td>
+    </tr>
     <% end %>
-    <p>Please list only the ingredient and put the quantities in the instructions.</p>
-  </div>
+  </table>
+  <% end %>
+  <p>Please list only the ingredient and put the quantities in the instructions.</p>
+</div>
+
+  <form action="/recipes/<%= @recipe.id %>/ingredients" method="post">
   <div class="form-group">
     <label for="ingredient1">Enter Ingredient</label>
     <input type="text" name="ingredient">
@@ -23,14 +23,15 @@
   </div>
 </form>
 
-<form action="/recipes/<%= @recipe.id %>/instructions" method="post">
-  <div>
-  <h2>Step Two: Add Instructions:</h2>
+
+<div>
+<h2>Step Two: Add Instructions:</h2>
   <% if @recipe.instruction() %>
   <p><%= @recipe.instruction %>
   <button><a href="/recipes/<%= @recipe.id() %>/instructions/edit">Edit Instructions</a></button></p>
   <% end %>
-  </div>
+</div>
+<form action="/recipes/<%= @recipe.id %>/instructions" method="post">
   <div class="form-group">
     <textarea class="form-control" rows="10" name="instruction" placeholder="Please, write out step-by-step instructions here, including quantities and measurements."></textarea>
   </div>
