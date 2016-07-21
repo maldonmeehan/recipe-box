@@ -10,4 +10,12 @@
 <% else %>
 <h2> You don't have any recipes yet. Let's get cookin'! </h2>
 <% end %>
-<button type='button'><a href='/recipes/new/'>Add New Recipe</a></button>
+
+<form action="/recipes/new" method="post">
+  <h2>Create a New Recipe:</h2>
+  <div class="form-group">
+    <label for="name">Recipe Title:</label>
+    <input type="text" name="name">
+  </div>
+  <button type='submit'>Go!</button>
+</form>
