@@ -27,8 +27,8 @@
   <div>
   <h2>Step Two: Add Instructions:</h2>
   <% if @recipe.instruction() %>
-  <p><%= @recipe.instruction %></p>
-  <button><a href="/recipes/<%= @recipe.id() %>/instructions/edit">Edit</a></button>
+  <p><%= @recipe.instruction %>
+  <button><a href="/recipes/<%= @recipe.id() %>/instructions/edit">Edit Instructions</a></button></p>
   <% end %>
   </div>
   <div class="form-group">

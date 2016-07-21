@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <title>Recipe Box</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Recipe Box</h1>
+      <h3>Update Jerk Chicken's instructions</h3>
+
+<form action="/recipes/269" method="post">
+  <input type="hidden" name="_method" value="patch">
+
+  <label for="instructions">Instructions:</label>
+
+  <textarea class="form-control" rows="10" name="instruction">Wash the chicken, salt (pinch) and let sweat for 10 min. Add pepper and bake at 350 for 2 hours</textarea>
+
+  <button type="submit">Update instructions</button>
+</form>
+
+    </div>
+  </body>
+</html>
