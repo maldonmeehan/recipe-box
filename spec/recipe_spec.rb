@@ -2,7 +2,7 @@ require("spec_helper")
 
 describe(Recipe) do
   describe("#ingredients") do
-    it('tells which ingredients are in it') do
+    it('has many ingredients in it') do
       test_recipe = Recipe.create({:name => 'Jerk Chicken'})
       test_ingredient1 = Ingredient.create({:ingredient => 'chicken'})
       test_ingredient2 = Ingredient.create({:ingredient => 'salt'})
