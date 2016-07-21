@@ -41,3 +41,8 @@ post('/recipes/:id/instructions') do
   @recipe.update({:instruction => instruction})
   redirect('/recipes/'.concat(@recipe.id().to_s()))
 end
+
+get ('/recipes/:id/complete') do
+  @recipe = Recipe.find(params.fetch('id').to_i())
+  erb(:recipe)
+end

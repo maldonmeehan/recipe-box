@@ -2,7 +2,7 @@
 
 <form action="/recipes/<%= @recipe.id %>/ingredients" method="post">
   <div>
-    <h2>Ingredients:</h2>
+    <h2>Step One: Add Ingredients:</h2>
     <% if @recipe.ingredients.any?() %>
     <ul>
       <% @recipe.ingredients.each do |ingredient| %>
@@ -15,13 +15,13 @@
   <div class="form-group">
     <label for="ingredient1">Enter Ingredient</label>
     <input type="text" name="ingredient">
+    <button type="submit">Add</button>
   </div>
-  <button type="submit">Add</button>
 </form>
 
 <form action="/recipes/<%= @recipe.id %>/instructions" method="post">
   <div>
-  <h2>Instructions:</h2>
+  <h2>Step Two: Add Instructions:</h2>
   <% if @recipe.instruction() %>
   <p><%= @recipe.instruction %></p>
   <% end %>
@@ -31,3 +31,8 @@
   </div>
   <button type="submit" name="submit">Submit</button>
 </form>
+
+<div>
+<h2>Step Three: Finish and View Recipe!</h2>
+<button><a href='/recipes/<%= @recipe.id() %>/complete'>See My Recipe</a></button>
+</div>
