@@ -35,11 +35,31 @@ post('/recipes/:id/ingredients') do
   end
 end
 
+delete ('/recipes/:id/ingredients') do
+  @recipe = Recipe.find(params['id'].to_i())
+  ingredient_id = params['ingredient_id'].to_i()
+  ingredient = Ingredient.find(ingredient_id)
+  @recipe.ingredients.destroy(ingredient)
+  redirect('/recipes/'.concat(@recipe.id().to_s()))
+end
+
 post('/recipes/:id/instructions') do
   @recipe = Recipe.find(params.fetch('id').to_i())
   instruction = params['instruction']
   @recipe.update({:instruction => instruction})
   redirect('/recipes/'.concat(@recipe.id().to_s()))
+end
+
+get('/recipes/:id/instructions/edit') do
+  @recipe = Recipe.find(params.fetch('id').to_i())
+  erb(:instruction_edit)
+end
+
+patch('/recipes/:id') do
+  @recipe = Recipe.find(params.fetch('id').to_i())
+  instruction = params['instruction']
+  @recipe.update({:instruction => instruction})
+  erb(:recipe_form)
 end
 
 get ('/recipes/:id/complete') do

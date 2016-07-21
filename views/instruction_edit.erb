@@ -1,0 +1,11 @@
+<h3>Update <%= @recipe.name() %>'s instructions</h3>
+
+<form action="/recipes/<%= @recipe.id() %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+
+  <label for="instructions">Instructions:</label>
+
+  <textarea class="form-control" rows="10" name="instruction"><%= @recipe.instruction() %></textarea>
+
+  <button type="submit" name="button">Update instructions</button>
+</form>

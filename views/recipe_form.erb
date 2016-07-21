@@ -3,12 +3,16 @@
 <form action="/recipes/<%= @recipe.id %>/ingredients" method="post">
   <div>
     <h2>Step One: Add Ingredients:</h2>
+
     <% if @recipe.ingredients.any?() %>
-    <ul>
+    <table>
       <% @recipe.ingredients.each do |ingredient| %>
-      <li><%= ingredient.ingredient() %></li>
+      <tr>
+        <td><%= ingredient.ingredient() %></td>
+        <td><form action="/recipes/<%= @recipe.id() %>/ingredients" method="post"><input name="_method" type="hidden" value="delete"><input name="ingredient_id" type="hidden" value="<%= ingredient.id %>"><button type="submit">Delete</button></form></td>
+      </tr>
       <% end %>
-    </ul>
+    </table>
     <% end %>
     <p>Please list only the ingredient and put the quantities in the instructions.</p>
   </div>
@@ -24,6 +28,7 @@
   <h2>Step Two: Add Instructions:</h2>
   <% if @recipe.instruction() %>
   <p><%= @recipe.instruction %></p>
+  <button><a href="/recipes/<%= @recipe.id() %>/instructions/edit">Edit</a></button>
   <% end %>
   </div>
   <div class="form-group">

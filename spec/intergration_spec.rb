@@ -48,15 +48,14 @@ describe('the recipe route', :type => :feature) do
     click_button 'See My Recipe'
     expect(page).to have_content('Jerk Chicken')
   end
+
+  it('allows a use to delete an ingredient') do
+    visit '/'
+    fill_in 'name', :with => 'Jerk Chicken'
+    click_button 'Go!'
+    fill_in 'ingredient', :with => 'Salt'
+    click_button 'Add'
+    click_button 'Delete'
+    expect(page).to have_no_content('Salt')
+  end
 end
-
-
-#
-#     fill_in 'ingredient1', :with => 'Chicken'
-#     fill_in 'ingredient2', :with => 'Salt'
-#     fill_in 'ingredient3', :with => 'Pepper'
-#     fill_in 'instruction', :with => 'Wash the chicken, salt (pinch) and let sweat for 10 min. Add pepper and bake at 350 for 2 hours'
-#     click_button 'Submit'
-#     expect(page).to have_content('Jerk Chicken')
-#   end
-# end
